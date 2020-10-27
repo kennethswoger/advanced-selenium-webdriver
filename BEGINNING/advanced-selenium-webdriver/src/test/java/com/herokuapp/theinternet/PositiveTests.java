@@ -16,7 +16,7 @@ public class PositiveTests {
 		System.out.println("Starting logIn test");
 
 		// Create driver
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
