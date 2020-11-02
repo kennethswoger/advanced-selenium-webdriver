@@ -2,9 +2,9 @@
 
 <suite name="PositiveTestSuite" verbose="1">
 	
-	<test name="PositiveTest">
+	<test name="PositiveLoginTest">
 		<classes>
-			<class name="com.herokuapp.theinternet.PositiveTests" />
+			<class name="com.herokuapp.theinternet.loginpagetests.PositiveLoginTests" />
 		</classes>
 	</test>
 	
