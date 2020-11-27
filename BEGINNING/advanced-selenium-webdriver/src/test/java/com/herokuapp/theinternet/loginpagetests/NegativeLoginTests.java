@@ -3,7 +3,6 @@ package com.herokuapp.theinternet.loginpagetests;
 
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.LoginPage;
-import com.herokuapp.theinternet.pages.SecureAreaPage;
 import com.herokuapp.theinternet.pages.WelcomePageObject;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
@@ -22,19 +21,20 @@ public class NegativeLoginTests extends TestUtilities {
 		Welcomepage.openPage();
 
 
-		// Click on Form Authentication link
+		// click on Form Authentication link
 		LoginPage loginPage = Welcomepage.clickFormAuthenticationLink();
 
 
 		// enter username and password
-		SecureAreaPage secureAreaPage = loginPage.logIn(username, password);
+		loginPage.negativeLogIn(username, password);
+
+		// wait for error message
+        loginPage.waitForErrorMessage();
+        String message = loginPage.getErrorMessageText();
 
 
 		// Verification
-		String actualErrorMessage = secureAreaPage.getErrorMessageText();
-		Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage),
-				"actualErrorMessage does not contain expectedErrorMessage\nexpectedErrorMessage: "
-						+ expectedErrorMessage + "\nactualErrorMessage: " + actualErrorMessage);
+        Assert.assertTrue(message.contains(expectedErrorMessage), "Message does not contain expected error message");
 	}
 
 }
