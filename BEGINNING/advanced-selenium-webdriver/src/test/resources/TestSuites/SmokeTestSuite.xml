@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SmokeTestSuire" verbose="1" parallel="tests" thread-count="4">
+
+	<test name="PostiveloginTest">
+		<classes>
+			<class name="com.herokuapp.theinternet.loginpagetests.PositiveLoginTests"/>
+		</classes>
+	</test>
+
+
+
+</suite>
